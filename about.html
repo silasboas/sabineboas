@@ -6,6 +6,9 @@
 <title>About · Sabine Boas · Psychotherapist</title>
 <meta name="description" content="About Sabine Boas, psychotherapist in Copenhagen and Ibiza. Depth-oriented psychotherapy, reflection, and integration." />
 <link rel="canonical" href="https://sabineboas.com/about.html" />
+<link rel="alternate" hreflang="en" href="https://sabineboas.com/about.html" />
+<link rel="alternate" hreflang="da" href="https://sabineboas.com/da/about.html" />
+<link rel="alternate" hreflang="x-default" href="https://sabineboas.com/about.html" />
 
 <script type="application/ld+json">
 {
@@ -35,6 +38,7 @@
       "name": "Sabine Boas — Psychotherapist",
       "url": "https://sabineboas.com/",
       "email": "sboasbondesen@gmail.com",
+      "telephone": "+45 20 30 23 64",
       "description": "Depth-oriented psychotherapy and psychedelic-informed retreats in Copenhagen and Ibiza, offered in Danish and English.",
       "founder": { "@id": "https://sabineboas.com/#sabine" },
       "areaServed": ["Copenhagen", "Ibiza"],
@@ -89,6 +93,9 @@
   .nav{ display:flex; gap:clamp(16px,2.2vw,32px); align-items:center; }
   .nav a{ font-size:.78rem; letter-spacing:.22em; text-transform:uppercase; opacity:.85; transition:opacity .25s; }
   .nav a:hover,.nav a[aria-current]{ opacity:1; border-bottom:1px solid currentColor; padding-bottom:2px; }
+  .nav a.lang{ opacity:1; border:1px solid var(--hair); border-radius:999px; padding:.32em .7em;
+    font-size:.7rem; letter-spacing:.18em; }
+  .nav a.lang:hover{ border-color:currentColor; }
 
   /* page band */
   .band{ background:var(--red); color:var(--cream);
@@ -204,6 +211,7 @@
       <a href="about.html" aria-current="page">About</a>
       <a href="faq.html">FAQ</a>
       <a href="index.html#contact">Contact</a>
+      <a href="/da/about.html" hreflang="da" lang="da" class="lang">DA</a>
     </nav>
   </header>
 
@@ -212,13 +220,14 @@
     <div class="wrap">
       <div class="about-grid">
 
-        <!-- PHOTO: replace sabine.jpg with the real photo (same folder). 4:5 portrait works best. -->
+        <!-- PHOTO: 4:5 portrait of Sabine with her Pomeranian, Dudu. -->
         <figure class="portrait reveal">
-          <img src="sabine.jpg" alt="Sabine Boas, psychotherapist"
+          <img src="sabine.jpg" alt="Sabine Boas, psychotherapist, with her Pomeranian, Dudu"
+               width="800" height="1000" loading="eager"
                onerror="this.style.display='none'; this.parentNode.querySelector('.portrait-ph').style.display='flex';" />
           <div class="portrait-ph">
-            Add photo
-            <span>replace&nbsp;sabine.jpg</span>
+            Sabine Boas
+            <span>Copenhagen &amp; Ibiza</span>
           </div>
           <figcaption>Sabine Boas · Copenhagen &amp; Ibiza</figcaption>
         </figure>
@@ -321,6 +330,7 @@
     <div class="fwarm">Freedom comes when you choose yourself.<br>Build a life that's truly yours.</div>
     <div>Psychotherapist · Copenhagen · Ibiza</div>
     <a class="femail" href="mailto:sboasbondesen@gmail.com?subject=A%20conversation">sboasbondesen@gmail.com</a>
+    <a class="femail" href="tel:+4520302364">+45 20 30 23 64</a>
     <div class="fine">© 2026 Sabine Boas · Made with care.</div>
   </footer>
 

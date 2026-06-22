@@ -6,6 +6,9 @@
 <title>Sabine Boas — Psychotherapist · Copenhagen · Ibiza</title>
 <meta name="description" content="Sabine Boas, psychotherapist in Copenhagen and Ibiza. Depth-oriented psychotherapy and reflective inner work. The quality of your questions shapes the quality of your life." />
 <link rel="canonical" href="https://sabineboas.com/" />
+<link rel="alternate" hreflang="en" href="https://sabineboas.com/" />
+<link rel="alternate" hreflang="da" href="https://sabineboas.com/da/" />
+<link rel="alternate" hreflang="x-default" href="https://sabineboas.com/" />
 
 <script type="application/ld+json">
 {
@@ -17,7 +20,33 @@
       "url": "https://sabineboas.com/",
       "name": "Sabine Boas",
       "inLanguage": "en",
-      "publisher": { "@id": "https://sabineboas.com/#practice" }
+      "publisher": { "@id": "https://sabineboas.com/#practice" },
+      "citation": [
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Psilocybin as Transformative Fast-Acting Antidepressant: Pharmacological Properties and Molecular Mechanisms",
+          "author": "Adebo OA, et al.",
+          "datePublished": "2025",
+          "isPartOf": { "@type": "Periodical", "name": "Fundamental & Clinical Pharmacology" },
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/fcp.70038"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Neural correlates of the psychedelic state as determined by fMRI studies with psilocybin",
+          "author": "Carhart-Harris RL, Erritzoe D, Williams T, et al.",
+          "datePublished": "2012",
+          "isPartOf": { "@type": "Periodical", "name": "Proceedings of the National Academy of Sciences (PNAS)" },
+          "url": "https://www.pnas.org/doi/10.1073/pnas.1119598109"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Psychedelics promote plasticity by directly binding to BDNF receptor TrkB",
+          "author": "Moliner R, Girych M, Brunello CA, et al.",
+          "datePublished": "2023",
+          "isPartOf": { "@type": "Periodical", "name": "Nature Neuroscience" },
+          "url": "https://www.nature.com/articles/s41593-023-01316-5"
+        }
+      ]
     },
     {
       "@type": "Person",
@@ -34,6 +63,7 @@
       "name": "Sabine Boas — Psychotherapist",
       "url": "https://sabineboas.com/",
       "email": "sboasbondesen@gmail.com",
+      "telephone": "+45 20 30 23 64",
       "description": "Depth-oriented psychotherapy and psychedelic-informed retreats in Copenhagen and Ibiza, offered in Danish and English.",
       "founder": { "@id": "https://sabineboas.com/#sabine" },
       "areaServed": ["Copenhagen", "Ibiza"],
@@ -125,6 +155,9 @@
   .nav{ display:flex; gap:clamp(16px,2.2vw,32px); align-items:center; }
   .nav a{ font-size:.78rem; letter-spacing:.22em; text-transform:uppercase; opacity:.85; transition:opacity .25s; }
   .nav a:hover{ opacity:1; }
+  .nav a.lang{ opacity:1; border:1px solid var(--hair); border-radius:999px; padding:.32em .7em;
+    font-size:.7rem; letter-spacing:.18em; }
+  .nav a.lang:hover{ border-color:currentColor; }
   .nav-contact{ font-size:.78rem; letter-spacing:.22em; text-transform:uppercase; opacity:.85; transition:opacity .25s; }
   .nav-contact:hover{ opacity:1; }
 
@@ -318,6 +351,11 @@
     margin:0 0 .25em;
   }
   .psilo-points .desc{ font-size:.92rem; opacity:.9; margin:0; line-height:1.4; }
+  .ref{ font-size:.62em; vertical-align:super; line-height:0; letter-spacing:0;
+    margin-left:.18em; opacity:.85; border-bottom:1px dotted rgba(250,248,243,.55); }
+  .ref:hover{ opacity:1; border-bottom-color:var(--cream); }
+  .psilo-care a{ border-bottom:1px solid rgba(250,248,243,.4); padding-bottom:.04em; }
+  .psilo-care a:hover{ border-bottom-color:var(--cream); }
   .psilo-care{ margin:clamp(26px,3.4vh,38px) 0 0; max-width:62ch;
     font-size:.86rem; opacity:.82; line-height:1.55; }
 
@@ -417,6 +455,7 @@
       <a href="about.html">About</a>
       <a href="faq.html">FAQ</a>
       <a href="#contact">Contact</a>
+      <a href="/da/" hreflang="da" lang="da" class="lang">DA</a>
     </nav>
   </header>
 
@@ -504,21 +543,28 @@
           <div class="psilo-points">
             <div>
               <p class="term">5-HT2A agonism</p>
-              <p class="desc">Stimulates serotonin 2A receptors, shifting perception.</p>
+              <p class="desc">Stimulates serotonin 2A receptors, shifting perception.<a class="ref" href="https://onlinelibrary.wiley.com/doi/10.1111/fcp.70038" target="_blank" rel="noopener" aria-label="Source 1: Fundamental &amp; Clinical Pharmacology, 2025">1</a></p>
             </div>
             <div>
               <p class="term">Quieter default mode</p>
-              <p class="desc">Loosens self-referential thought, easing rumination.</p>
+              <p class="desc">Loosens self-referential thought, easing rumination.<a class="ref" href="https://www.pnas.org/doi/10.1073/pnas.1119598109" target="_blank" rel="noopener" aria-label="Source 2: Carhart-Harris et al., PNAS, 2012">2</a></p>
             </div>
             <div>
               <p class="term">Neuroplasticity</p>
-              <p class="desc">Supports new neural connections (e.g. BDNF).</p>
+              <p class="desc">Supports new neural connections (e.g. BDNF).<a class="ref" href="https://www.nature.com/articles/s41593-023-01316-5" target="_blank" rel="noopener" aria-label="Source 3: Moliner et al., Nature Neuroscience, 2023">3</a></p>
             </div>
             <div>
               <p class="term">Processing</p>
               <p class="desc">With therapy, opens insight and breakthrough.</p>
             </div>
           </div>
+          <p class="psilo-care">
+            General neuroscience, shared for context — not medical advice or a treatment claim. Sources:
+            <a href="https://onlinelibrary.wiley.com/doi/10.1111/fcp.70038" target="_blank" rel="noopener">Adebo et&nbsp;al., <em>Fundamental &amp; Clinical Pharmacology</em> (2025)</a>;
+            <a href="https://www.pnas.org/doi/10.1073/pnas.1119598109" target="_blank" rel="noopener">Carhart-Harris et&nbsp;al., <em>PNAS</em> (2012)</a>;
+            <a href="https://www.nature.com/articles/s41593-023-01316-5" target="_blank" rel="noopener">Moliner et&nbsp;al., <em>Nature Neuroscience</em> (2023)</a>.
+            Any psychedelic-assisted work is offered only where it is legally available and clinically appropriate.
+          </p>
         </div>
       </div>
     </div>
@@ -569,6 +615,7 @@
     <div class="fwarm">Freedom comes when you choose yourself.<br>Build a life that's truly yours.</div>
     <div>Psychotherapist · Copenhagen · Ibiza</div>
     <a class="femail" href="mailto:sboasbondesen@gmail.com?subject=A%20conversation">sboasbondesen@gmail.com</a>
+    <a class="femail" href="tel:+4520302364" style="margin-left:1.4em">+45 20 30 23 64</a>
     <div class="fine">© 2026 Sabine Boas · Made with care.</div>
   </footer>
 
