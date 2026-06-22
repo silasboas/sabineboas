@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FAQ · Sabine Boas · Psychotherapist</title>
+<meta name="description" content="Frequently asked questions about working with Sabine Boas, psychotherapist in Copenhagen and Ibiza." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --red:#F03C1E; --red-deep:#C42E14; --burgundy:#7A1F4D;
+    --ink:#14100E; --cream:#FAF8F3; --cream-2:#F2ECE1; --cream-soft:rgba(250,248,243,.72);
+    --hair:rgba(250,248,243,.28); --hair-ink:rgba(20,16,14,.16);
+    --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+    --body:"EB Garamond",Georgia,serif;
+    --maxw:1120px; --gut:clamp(22px,5vw,64px);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:var(--cream); color:var(--ink); font-family:var(--body);
+    font-size:clamp(17px,1.15vw,19px); line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 var(--gut); }
+  .wrap--narrow{ max-width:820px; }
+  .eyebrow{ text-transform:uppercase; letter-spacing:.34em; font-size:.74rem; opacity:.85; }
+  .label{ font-size:.72rem; letter-spacing:.34em; text-transform:uppercase; color:var(--red); opacity:.85; margin:0 0 1.6em; }
+
+  header{ background:var(--red); color:var(--cream);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:clamp(20px,3vw,30px) var(--gut); }
+  .mark{ font-size:.82rem; letter-spacing:.34em; text-transform:uppercase; }
+  .nav{ display:flex; gap:clamp(16px,2.2vw,32px); align-items:center; }
+  .nav a{ font-size:.78rem; letter-spacing:.22em; text-transform:uppercase; opacity:.85; transition:opacity .25s; }
+  .nav a:hover,.nav a[aria-current]{ opacity:1; border-bottom:1px solid currentColor; padding-bottom:2px; }
+
+  .band{ background:var(--red); color:var(--cream);
+    padding:clamp(28px,5vh,56px) 0 clamp(70px,12vh,130px); position:relative; overflow:hidden; }
+  .band::after{ content:""; position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(120% 110% at 88% 0%, rgba(255,150,70,.4), transparent 55%),
+               radial-gradient(140% 120% at 6% 120%, rgba(120,10,30,.5), transparent 60%);
+    mix-blend-mode:soft-light; }
+  .band .wrap{ position:relative; z-index:1; }
+  .band .eyebrow{ opacity:.92; text-shadow:0 1px 12px rgba(96,8,0,.28); }
+  .band h1{ font-family:var(--serif); font-weight:400;
+    font-size:clamp(2.6rem,7vw,5.4rem); line-height:1.02; margin:.5em 0 0; text-shadow:0 2px 20px rgba(96,8,0,.3); }
+
+  section{ padding:clamp(72px,11vh,120px) 0; }
+  .intro{ font-family:var(--serif); font-size:clamp(1.5rem,3vw,2.1rem); line-height:1.3;
+    max-width:30ch; margin:0 0 clamp(40px,6vh,64px); }
+
+  /* accordion */
+  .faq{ border-top:1px solid var(--hair-ink); }
+  details{ border-bottom:1px solid var(--hair-ink); }
+  summary{ list-style:none; cursor:pointer; display:flex; align-items:flex-start; justify-content:space-between;
+    gap:1.4em; padding:1.5em 0;
+    font-family:var(--serif); font-size:clamp(1.35rem,2.6vw,1.85rem); line-height:1.25; }
+  summary::-webkit-details-marker{ display:none; }
+  summary:hover{ color:var(--red); }
+  details[open] summary{ color:var(--red); }
+  .sign{ flex:0 0 auto; width:1em; height:1em; margin-top:.32em; position:relative; }
+  .sign::before,.sign::after{ content:""; position:absolute; background:currentColor; transition:transform .3s ease, opacity .3s ease; }
+  .sign::before{ top:50%; left:0; width:100%; height:1.5px; transform:translateY(-50%); }
+  .sign::after{ left:50%; top:0; height:100%; width:1.5px; transform:translateX(-50%); }
+  details[open] .sign::after{ opacity:0; transform:translateX(-50%) scaleY(0); }
+  .answer{ padding:0 0 1.8em; max-width:64ch; }
+  .answer p{ margin:0 0 1em; }
+  .answer p:last-child{ margin-bottom:0; }
+  .answer .note{ font-size:.94rem; opacity:.7; }
+  .answer a.inline{ color:var(--red); border-bottom:1px solid var(--red); }
+  .answer .heart{ color:var(--red); }
+
+  .cta-strip{ background:var(--red); color:var(--cream); text-align:center; }
+  .cta-strip h2{ font-family:var(--serif); font-weight:400; font-size:clamp(2.2rem,6vw,4.2rem);
+    line-height:1.04; margin:0 0 .6em; text-shadow:0 2px 20px rgba(96,8,0,.28); }
+  .cta-strip p{ max-width:42ch; margin:0 auto 2.2em; opacity:.92; }
+  .cta{ display:inline-flex; align-items:center; gap:.85em; font-size:.86rem; letter-spacing:.26em;
+    text-transform:uppercase; padding:1.05em 1.9em; border:1px solid currentColor; transition:background .3s, color .3s, transform .3s; }
+  .cta .arrow{ transition:transform .3s; }
+  .cta:hover{ background:var(--cream); color:var(--red); }
+  .cta:hover .arrow{ transform:translateX(5px); }
+  .cta:focus-visible{ outline:2px solid var(--cream); outline-offset:4px; }
+
+  footer{ background:var(--ink); color:var(--cream-soft); text-align:center;
+    padding:clamp(48px,8vh,80px) var(--gut); font-size:.78rem; letter-spacing:.24em; text-transform:uppercase; }
+  footer .fmark{ letter-spacing:.4em; font-size:.86rem; color:var(--cream); margin-bottom:1.2em; }
+  footer .fwarm{ font-family:var(--serif); font-style:italic; text-transform:none; letter-spacing:.01em;
+    font-size:clamp(1.15rem,2.4vw,1.5rem); color:var(--cream); opacity:.92; max-width:44ch;
+    margin:0 auto 1.6em; line-height:1.35; }
+  footer .femail{ display:inline-block; margin-top:1.1em; text-transform:none; letter-spacing:.02em;
+    font-size:.92rem; color:var(--cream); opacity:.85; border-bottom:1px solid rgba(250,248,243,.32);
+    padding-bottom:.12em; transition:opacity .25s; }
+  footer .femail:hover{ opacity:1; }
+  footer .fine{ letter-spacing:.04em; text-transform:none; font-size:.82rem; opacity:.6; margin-top:1.4em; }
+
+  @media (prefers-reduced-motion:reduce){
+    *{ scroll-behavior:auto !important; }
+    .sign::before,.sign::after,.cta,.cta .arrow{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <a class="mark" href="index.html">Sabine Boas</a>
+    <nav class="nav">
+      <a href="about.html">About</a>
+      <a href="faq.html" aria-current="page">FAQ</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="band">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h1>Questions, answered.</h1>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap wrap--narrow">
+      <p class="intro">The honest answers to what most people want to know before reaching out.</p>
+
+      <div class="faq">
+
+        <details open>
+          <summary>How do we begin? <span class="sign" aria-hidden="true"></span></summary>
+          <div class="answer">
+            <p>With a short conversation, not a commitment. We talk through what's bringing you here and whether the work feels like a fit, for both of us. If it does, we book a first full session and go from there.</p>
+            <p class="note">[Add whether the intro call is free, and how long it runs.]</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Do you work in person or online? <span class="sign" aria-hidden="true"></span></summary>
+          <div class="answer">
+            <p>I offer private one-to-one sessions in Copenhagen and Ibiza, as well as online for clients worldwide.</p>
+            <p>For those seeking a more immersive experience, I also host upcoming retreats in Ibiza, designed for deeper personal exploration and transformation in an intimate group setting.</p>
+            <p><a class="inline" href="mailto:sboasbondesen@gmail.com?subject=A%20conversation">Contact me</a> for current availability, locations, and retreat dates.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What is "depth work"? <span class="sign" aria-hidden="true"></span></summary>
+          <div class="answer">
+            <p>It's therapy that goes beneath the presenting problem. Rather than managing a symptom, we follow it to the pattern underneath: the old story, the unmet need, the belief quietly shaping how you meet the world, so that change can happen at the root rather than the surface.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How long and how often are sessions? <span class="sign" aria-hidden="true"></span></summary>
+          <div class="answer">
+            <p>Most sessions run [50–60] minutes. Many people come weekly or fortnightly at first, then ease the rhythm as things settle. There's no fixed length to the work; we review together as we go.</p>
+            <p class="note">[Set your session length and typical cadence.]</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What does it cost? <span class="sign" aria-hidden="true"></span></summary>
+          <div class="answer">
+            <p>The investment varies depending on the length of our work together, allowing you to choose the level of support that feels right for you.</p>
+            <p>One-to-one sessions are offered at the same rate whether we meet online or in person.</p>
+            <p>Retreats in Ibiza are offered separately. Please contact me for information about upcoming dates and pricing.</p>
+            <p>As a welcome gift, if you decide to book a package of 10 sessions during our first meeting, I will include an additional 30 minutes of therapy free of charge.</p>
+            <p>If you have any questions about my work, I warmly invite you to <a class="inline" href="mailto:sboasbondesen@gmail.com?subject=A%20conversation">get in touch</a>. I would be delighted to explore what might best support you.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What languages do you work in? <span class="sign" aria-hidden="true"></span></summary>
+          <div class="answer">
+            <p>Danish and English, whichever you feel more yourself in.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Is what I share confidential? <span class="sign" aria-hidden="true"></span></summary>
+          <div class="answer">
+            <p>Yes. What you bring stays between us, within the normal professional and legal limits of confidentiality. If there's ever a situation those limits apply, I'll be open with you about it.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What about retreats and psychedelic therapy? <span class="sign" aria-hidden="true"></span></summary>
+          <div class="answer">
+            <p>Psychedelic therapy is a carefully held process of preparation, experience, and integration. It always begins with a one-on-one preparation session where we explore your intentions, health history, personal background, and what draws you to this work. Together, we assess whether it feels safe, supportive, and right for you at this time.</p>
+            <p>Preparation may include intention work, therapeutic exercises, nervous system regulation practices, and conversations to help you feel grounded, clear, and ready.</p>
+            <p>The retreat experience can be held in a small group setting or, if you feel called to a more personal container, in a one-on-one setting. I offer both options to support what feels best and most aligned for you.</p>
+            <p>Afterwards, integration therapy helps you make sense of what emerged and embody the insights in your everyday life.</p>
+            <p>This work is deeply individual and always approached with care, respect, and honesty. We take each step together. <span class="heart">♡</span></p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Could the deeper work be unsuitable for me? <span class="sign" aria-hidden="true"></span></summary>
+          <div class="answer">
+            <p>Possibly, and that is why we begin with a conversation.</p>
+            <p>Together, we explore what is happening in your life right now, what is moving within you, and what is calling you towards deeper work. We take time to understand your emotional landscape, your intentions, your personal history, and where you currently are on your journey.</p>
+            <p>We also consider whether this feels like the right time for you. Are you in a place where you can welcome the insights that may arise? Do you feel ready to meet yourself more deeply and engage with the changes that this work can invite?</p>
+            <p>Your physical health is equally important. We carefully review your health history and current circumstances to ensure that your body and nervous system are in a position to safely support this process.</p>
+            <p>There is never any pressure to move forward. Sometimes the answer is yes, sometimes it is not yet. Together, we listen carefully and honestly to what feels most supportive for you.</p>
+            <p>The intention is never simply to have an experience, but to create the foundation for meaningful and lasting transformation when the timing, the circumstances, and your readiness are aligned.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What's your cancellation policy? <span class="sign" aria-hidden="true"></span></summary>
+          <div class="answer">
+            <p>Life happens, and sometimes plans need to change.</p>
+            <p>For one-to-one sessions, I ask for 24 hours' notice for cancellations or rescheduling. Sessions cancelled within 24 hours are charged in full.</p>
+            <p>Retreat bookings are non-refundable, but your place may be moved to another retreat date if needed and if space is available.</p>
+            <p>If something unexpected comes up, please let me know as early as possible, and we'll find the best way forward together.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <div class="wrap">
+      <h2>Still wondering?</h2>
+      <p>The simplest way to find out if this is right for you is to ask. Write a few lines and I'll reply personally.</p>
+      <a class="cta" href="mailto:sboasbondesen@gmail.com?subject=A%20conversation">Arrange a conversation <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="fmark">Sabine Boas</div>
+    <div class="fwarm">Freedom comes when you choose yourself.<br>Build a life that's truly yours.</div>
+    <div>Psychotherapist · Copenhagen · Ibiza</div>
+    <a class="femail" href="mailto:sboasbondesen@gmail.com?subject=A%20conversation">sboasbondesen@gmail.com</a>
+    <div class="fine">© 2026 Sabine Boas · Made with care.</div>
+  </footer>
+
+</body>
+</html>

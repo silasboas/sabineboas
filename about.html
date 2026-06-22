@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About · Sabine Boas · Psychotherapist</title>
+<meta name="description" content="About Sabine Boas, psychotherapist in Copenhagen and Ibiza. Depth-oriented psychotherapy, reflection, and integration." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --red:#F03C1E; --red-deep:#C42E14; --burgundy:#7A1F4D;
+    --ink:#14100E; --cream:#FAF8F3; --cream-2:#F2ECE1; --cream-soft:rgba(250,248,243,.72);
+    --hair:rgba(250,248,243,.28); --hair-ink:rgba(20,16,14,.16);
+    --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+    --body:"EB Garamond",Georgia,serif;
+    --maxw:1120px; --gut:clamp(22px,5vw,64px);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:var(--cream); color:var(--ink); font-family:var(--body);
+    font-size:clamp(17px,1.15vw,19px); line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 var(--gut); }
+  .sc{ font-variant-caps:small-caps; letter-spacing:.06em; }
+  .eyebrow{ text-transform:uppercase; letter-spacing:.34em; font-size:.74rem; opacity:.85; }
+  .label{ font-size:.72rem; letter-spacing:.34em; text-transform:uppercase; color:var(--red); opacity:.85; margin:0 0 1.6em; }
+
+  /* header (red bar, shared across interior pages) */
+  header{ background:var(--red); color:var(--cream);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:clamp(20px,3vw,30px) var(--gut); }
+  .mark{ font-size:.82rem; letter-spacing:.34em; text-transform:uppercase; }
+  .nav{ display:flex; gap:clamp(16px,2.2vw,32px); align-items:center; }
+  .nav a{ font-size:.78rem; letter-spacing:.22em; text-transform:uppercase; opacity:.85; transition:opacity .25s; }
+  .nav a:hover,.nav a[aria-current]{ opacity:1; border-bottom:1px solid currentColor; padding-bottom:2px; }
+
+  /* page band */
+  .band{ background:var(--red); color:var(--cream);
+    padding:clamp(28px,5vh,56px) 0 clamp(70px,12vh,130px);
+    position:relative; overflow:hidden; }
+  .band::after{ content:""; position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(120% 110% at 88% 0%, rgba(255,150,70,.4), transparent 55%),
+               radial-gradient(140% 120% at 6% 120%, rgba(120,10,30,.5), transparent 60%);
+    mix-blend-mode:soft-light; }
+  .band .wrap{ position:relative; z-index:1; }
+  .band .eyebrow{ opacity:.92; text-shadow:0 1px 12px rgba(96,8,0,.28); }
+  .band h1{ font-family:var(--serif); font-weight:400;
+    font-size:clamp(2.6rem,7vw,5.4rem); line-height:1.02; letter-spacing:.01em;
+    margin:.5em 0 0; max-width:16ch; text-shadow:0 2px 20px rgba(96,8,0,.3); }
+
+  section{ padding:clamp(72px,11vh,130px) 0; }
+  .about-first{ padding-top:clamp(64px,10vh,110px); }
+
+  /* about split */
+  .about-grid{ display:grid; grid-template-columns:1fr; gap:clamp(34px,5vw,72px); align-items:start; }
+  @media(min-width:920px){ .about-grid{ grid-template-columns:.82fr 1.18fr; gap:clamp(48px,6vw,96px); } }
+
+  .portrait{ margin:0; position:relative; }
+  .portrait img{ width:100%; aspect-ratio:4/5; object-fit:cover; background:var(--cream-2); }
+  .portrait figcaption{ margin-top:1em; font-variant-caps:small-caps; letter-spacing:.05em; opacity:.7; font-size:1rem; }
+  .portrait-ph{ display:none; aspect-ratio:4/5; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; gap:.4em; color:var(--cream);
+    background:linear-gradient(160deg,#2a0e16,var(--burgundy) 55%,var(--red-deep));
+    font-family:var(--serif); font-size:1.5rem; letter-spacing:.02em; }
+  .portrait-ph span{ font-family:var(--body); font-size:.78rem; letter-spacing:.22em; text-transform:uppercase; opacity:.75; }
+
+  .bio h2{ font-family:var(--serif); font-weight:400; font-size:clamp(2rem,4.4vw,3.2rem);
+    line-height:1.08; margin:0 0 .7em; }
+  .bio p{ margin:0 0 1.2em; max-width:60ch; }
+  .bio p:last-child{ margin-bottom:0; }
+  .bio .lede{ font-size:1.14rem; }
+  .pull{ font-family:var(--serif); font-style:italic; font-size:clamp(1.5rem,2.8vw,2.1rem);
+    line-height:1.3; color:var(--red); margin:1.6em 0; max-width:24ch; }
+  .signoff{ font-family:var(--serif); font-style:italic; font-size:clamp(1.25rem,2.2vw,1.6rem);
+    line-height:1.35; margin:1.4em 0 0; max-width:30ch; }
+
+  /* facts strip */
+  .facts{ background:var(--cream-2); }
+  .facts-grid{ display:grid; grid-template-columns:1fr; gap:clamp(28px,4vw,48px); }
+  @media(min-width:740px){ .facts-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media(min-width:980px){ .facts-grid{ grid-template-columns:repeat(4,1fr); } }
+  .fact{ border-top:1px solid var(--hair-ink); padding-top:1.2em; }
+  .fact h3{ margin:0 0 .5em; font-size:.72rem; letter-spacing:.28em; text-transform:uppercase; color:var(--red); font-weight:400; }
+  .fact p{ margin:0; font-variant-caps:small-caps; letter-spacing:.04em; font-size:1.08rem; line-height:1.45; }
+
+  /* approach */
+  .approach h2{ font-family:var(--serif); font-weight:400; font-size:clamp(2rem,4.6vw,3.2rem);
+    margin:0 0 1.4em; max-width:18ch; }
+  .principles{ display:grid; grid-template-columns:1fr; gap:clamp(24px,3vw,40px); }
+  @media(min-width:820px){ .principles{ grid-template-columns:repeat(3,1fr); } }
+  .principle{ border-top:1px solid var(--hair-ink); padding-top:1.3em; }
+  .principle h3{ font-family:var(--serif); font-weight:400; font-size:1.5rem; margin:0 0 .5em; }
+  .principle p{ margin:0; opacity:.86; }
+
+  /* testimonials */
+  .testimonial{ background:var(--cream-2); }
+  .testimonial .label{ text-align:center; margin-bottom:clamp(40px,6vh,68px); }
+  .t-grid{ display:grid; grid-template-columns:1fr; gap:clamp(40px,5vw,64px); }
+  @media(min-width:860px){ .t-grid{ grid-template-columns:1fr 1fr; gap:clamp(48px,6vw,88px); } }
+  .t-card{ margin:0; border-top:1px solid var(--hair-ink); padding-top:1.8em; }
+  .t-card .t-lead{
+    font-family:var(--serif); font-style:italic; opacity:1; color:var(--ink);
+    font-size:clamp(1.3rem,2vw,1.65rem); line-height:1.32; margin:0 0 .9em;
+  }
+  .t-card p{ margin:0 0 1em; opacity:.84; font-size:1.02rem; line-height:1.55; }
+  .t-card cite{
+    display:inline-block; margin-top:.7em; font-style:normal;
+    font-variant-caps:small-caps; letter-spacing:.18em; font-size:.9rem;
+    text-transform:uppercase; color:var(--red);
+  }
+
+  /* cta strip */
+  .cta-strip{ background:var(--red); color:var(--cream); text-align:center; }
+  .cta-strip h2{ font-family:var(--serif); font-weight:400; font-size:clamp(2.2rem,6vw,4.2rem);
+    line-height:1.04; margin:0 0 .6em; text-shadow:0 2px 20px rgba(96,8,0,.28); }
+  .cta-strip p{ max-width:42ch; margin:0 auto 2.2em; opacity:.92; }
+  .cta{ display:inline-flex; align-items:center; gap:.85em; font-size:.86rem; letter-spacing:.26em;
+    text-transform:uppercase; padding:1.05em 1.9em; border:1px solid currentColor; transition:background .3s, color .3s, transform .3s; }
+  .cta .arrow{ transition:transform .3s; }
+  .cta:hover{ background:var(--cream); color:var(--red); }
+  .cta:hover .arrow{ transform:translateX(5px); }
+  .cta:focus-visible{ outline:2px solid var(--cream); outline-offset:4px; }
+
+  footer{ background:var(--ink); color:var(--cream-soft); text-align:center;
+    padding:clamp(48px,8vh,80px) var(--gut); font-size:.78rem; letter-spacing:.24em; text-transform:uppercase; }
+  footer .fmark{ letter-spacing:.4em; font-size:.86rem; color:var(--cream); margin-bottom:1.2em; }
+  footer .fwarm{ font-family:var(--serif); font-style:italic; text-transform:none; letter-spacing:.01em;
+    font-size:clamp(1.15rem,2.4vw,1.5rem); color:var(--cream); opacity:.92; max-width:44ch;
+    margin:0 auto 1.6em; line-height:1.35; }
+  footer .femail{ display:inline-block; margin-top:1.1em; text-transform:none; letter-spacing:.02em;
+    font-size:.92rem; color:var(--cream); opacity:.85; border-bottom:1px solid rgba(250,248,243,.32);
+    padding-bottom:.12em; transition:opacity .25s; }
+  footer .femail:hover{ opacity:1; }
+  footer a:hover{ color:var(--cream); }
+  footer .fine{ letter-spacing:.04em; text-transform:none; font-size:.82rem; opacity:.6; margin-top:1.4em; }
+
+  @media (prefers-reduced-motion:reduce){
+    *{ scroll-behavior:auto !important; }
+    .cta,.cta .arrow{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <a class="mark" href="index.html">Sabine Boas</a>
+    <nav class="nav">
+      <a href="about.html" aria-current="page">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ABOUT: photo + bio -->
+  <section class="about-first">
+    <div class="wrap">
+      <div class="about-grid">
+
+        <!-- PHOTO: replace sabine.jpg with the real photo (same folder). 4:5 portrait works best. -->
+        <figure class="portrait reveal">
+          <img src="sabine.jpg" alt="Sabine Boas, psychotherapist"
+               onerror="this.style.display='none'; this.parentNode.querySelector('.portrait-ph').style.display='flex';" />
+          <div class="portrait-ph">
+            Add photo
+            <span>replace&nbsp;sabine.jpg</span>
+          </div>
+          <figcaption>Sabine Boas · Copenhagen &amp; Ibiza</figcaption>
+        </figure>
+
+        <!-- BIO -->
+        <div class="bio reveal">
+          <p class="label">About</p>
+          <h2>Hello, I'm Sabine.</h2>
+          <p class="lede">I'm a psychotherapist working in person in both Copenhagen and Ibiza, in Danish or English. There is no stronger force for personal growth than honest self-insight, and my practice rests on that conviction: the quality of your questions shapes the quality of your life.</p>
+          <p>I meet each person with deep respect and an unshakeable belief that we all carry an innate capacity to heal, when we are met with curiosity, courage, and care. Together we sit with the things that are hard to say out loud: grief, change, anxiety, and the quiet patterns that keep repeating, moving past the symptom toward what lives underneath.</p>
+          <p>My own journey began with a serious illness that changed the way I see life, and opened a realization of what we hold within us when we dare to listen inward and lift our gaze. Born in 1974, with a background as a Pilates instructor and psychotherapist, and having stood face to face with life and death myself, I've worked in personal development and therapy since 2018, learning to create safe spaces where both body and soul can find calm and strength.</p>
+          <p class="pull">Self-awareness is the mirror in which you learn to be free.</p>
+          <p>My work is carried by an open and spiritual approach, where there is room to let go, to reach for what has not yet found words. I believe true change happens when we dare to feel ourselves honestly, and when we are met with safety, presence, and respect.</p>
+          <p class="signoff">Welcome to the best version of yourself. I look forward to meeting you.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FACTS -->
+  <section class="facts">
+    <div class="wrap reveal">
+      <p class="label">At a glance</p>
+      <div class="facts-grid">
+        <div class="fact">
+          <h3>Background</h3>
+          <p>Psychotherapist &amp;<br>Pilates instructor · since 2018</p>
+        </div>
+        <div class="fact">
+          <h3>Languages</h3>
+          <p>Danish<br>English</p>
+        </div>
+        <div class="fact">
+          <h3>Where</h3>
+          <p>Copenhagen &amp; Ibiza<br>In person</p>
+        </div>
+        <div class="fact">
+          <h3>Works with</h3>
+          <p>Individuals<br>Small groups</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="approach">
+    <div class="wrap reveal">
+      <p class="label">How I work</p>
+      <h2>What the work feels like.</h2>
+      <div class="principles">
+        <div class="principle">
+          <h3>From doing to being</h3>
+          <p>So much of life teaches us to push, strive, and hold it all together. Here, we practice something different: a space to soften, to listen, and to reconnect with the parts of yourself that long for freedom, flow, and deeper self-trust.</p>
+        </div>
+        <div class="principle">
+          <h3>Coming home to the body</h3>
+          <p>The body speaks in sensations, emotions, tension, and ease. When we learn to listen, it can guide us back to ourselves, to places of wholeness, vitality, and aliveness that may have felt out of reach.</p>
+        </div>
+        <div class="principle">
+          <h3>Led by care</h3>
+          <p>There is no agenda for who you should become. Only an invitation to meet yourself more fully, with kindness and honesty. From that place, change happens naturally, like a river finding its way back into flow. ✨</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonial">
+    <div class="wrap reveal">
+      <p class="label">In their words</p>
+      <div class="t-grid">
+        <blockquote class="t-card">
+          <p class="t-lead">Sabine helped me through what was probably the toughest chapter of my life. She has a rare combination of sharpness and warmth, she helps spot patterns fast, and challenges them in a way that feels safe enough to reset.</p>
+          <p>With her help I've rebuilt, not back to who I was, but into something stronger. More conscious. More whole and grounded. Healing with real focus, self-work and presence.</p>
+          <p>What makes Sabine stand out as a therapist is her ability to work with deep pattern recognition and genuine presence, not just talking, but actually shifting something. If you're looking for a therapist who combines therapeutic awareness, somatic sensitivity, and real focus on lasting change, she is the one.</p>
+          <cite>Heidi</cite>
+        </blockquote>
+        <blockquote class="t-card">
+          <p class="t-lead">Sabine has been an important part of my personal growth journey. From our very first conversations, I felt genuinely seen, understood, and supported.</p>
+          <p>She has a rare ability to combine warmth, intuition, and deep insight in a way that makes even the most challenging work feel safe and meaningful. What sets her apart is her presence. She listens beyond the words and helps uncover patterns and perspectives that are often difficult to see on your own. Through her guidance, I have gained a deeper understanding of myself, greater self-awareness, and tools that continue to support me in everyday life.</p>
+          <p>Sabine brings both professionalism and heart to her work, and I wholeheartedly recommend her to anyone seeking real growth, healing, and lasting change.</p>
+          <cite>Anna</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="wrap reveal">
+      <h2>Curious whether this fits?</h2>
+      <p>Every process starts with a quiet, no-pressure conversation. Tell me a little about what's bringing you here.</p>
+      <a class="cta" href="mailto:sboasbondesen@gmail.com?subject=A%20conversation">Arrange a conversation <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="fmark">Sabine Boas</div>
+    <div class="fwarm">Freedom comes when you choose yourself.<br>Build a life that's truly yours.</div>
+    <div>Psychotherapist · Copenhagen · Ibiza</div>
+    <a class="femail" href="mailto:sboasbondesen@gmail.com?subject=A%20conversation">sboasbondesen@gmail.com</a>
+    <div class="fine">© 2026 Sabine Boas · Made with care.</div>
+  </footer>
+
+</body>
+</html>
