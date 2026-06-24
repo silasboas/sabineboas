@@ -116,9 +116,9 @@
 
   /* about split */
   .about-grid{ display:grid; grid-template-columns:1fr; gap:clamp(34px,5vw,72px); align-items:start; }
-  @media(min-width:920px){ .about-grid{ grid-template-columns:.82fr 1.18fr; gap:clamp(48px,6vw,96px); } .portrait{ width:auto; max-width:none; margin:0; } }
+  @media(min-width:920px){ .about-grid{ grid-template-columns:.82fr 1.18fr; gap:clamp(48px,6vw,96px); } .portrait img, .portrait-ph{ max-height:min(62vh,500px); } }
 
-  .portrait{ margin:0 auto; position:relative; width:78%; max-width:300px; }
+  .portrait{ margin:0; position:relative; }
   .portrait img{ width:100%; aspect-ratio:4/5; object-fit:cover; background:var(--cream-2); }
   .portrait figcaption{ margin-top:1em; font-variant-caps:small-caps; letter-spacing:.05em; opacity:.7; font-size:1rem; }
   .portrait-ph{ display:none; aspect-ratio:4/5; flex-direction:column; align-items:center; justify-content:center;
@@ -126,6 +126,13 @@
     background:linear-gradient(160deg,#2a0e16,var(--burgundy) 55%,var(--red-deep));
     font-family:var(--serif); font-size:1.5rem; letter-spacing:.02em; }
   .portrait-ph span{ font-family:var(--body); font-size:.78rem; letter-spacing:.22em; text-transform:uppercase; opacity:.75; }
+
+  /* mobile: keep portrait above the fold — cap height, derive width from 4:5 ratio */
+  @media(max-width:919px){
+    .portrait img{ display:block; }
+    .portrait img, .portrait-ph{ width:auto; max-width:100%; height:min(40vh,320px); margin-inline:auto; }
+    .portrait figcaption{ text-align:center; }
+  }
 
   .bio h2{ font-family:var(--serif); font-weight:400; font-size:clamp(2rem,4.4vw,3.2rem);
     line-height:1.08; margin:0 0 .7em; }
